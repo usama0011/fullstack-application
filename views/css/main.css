@@ -5,3 +5,23 @@ body{
 .content{
     margin-top: 100px;
 }
+.shr{
+    width: 100%;
+    height: 500px !important;
+}
+.shr img{
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-origin: content-box;
+    image-orientation: from-image;
+}
+.new{
+    margin-top: 30px;
+    padding: 30px;
+}
+ @media (max-width:600px){
+     .shr{
+         height: 300px;
+     }
+ }

@@ -12,7 +12,7 @@ router.post('/', function(req, res, next) {
 	var personInfo = req.body;
 
 
-	if(!personInfo.email || !personInfo.username || !personInfo.password || !personInfo.passwordConf){
+	if(!personInfo.email || !personInfo.password || !personInfo.passwordConf){
 		res.send();
 	} else {
 		if (personInfo.password == personInfo.passwordConf) {
@@ -32,7 +32,6 @@ router.post('/', function(req, res, next) {
 						var newPerson = new User({
 							unique_id:c,
 							email:personInfo.email,
-							username: personInfo.username,
 							password: personInfo.password,
 							passwordConf: personInfo.passwordConf
 						});
@@ -90,7 +89,7 @@ router.get('/profile', function (req, res, next) {
 			res.redirect('/');
 		}else{
 			//console.log("found");
-			return res.render('data.ejs', {"name":data.username,"email":data.email});
+			return res.render('data.ejs', {"email":data.email});
 		}
 	});
 });
